@@ -1,6 +1,6 @@
 {
   "name": "my-react-app",
-  "homepage": "https://carolkiki2003.github.io/my-react-app",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
