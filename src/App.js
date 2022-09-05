@@ -1,5 +1,6 @@
-import './assets/App.css';
+import './App.css';
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const {useState}=React
 
@@ -10,7 +11,7 @@ function InputBox({list,setList}){
     <div className="inputBox">
       <input type="text" value={item} onChange={(e)=>{setItem(e.target.value)}} placeholder="請輸入待辦事項"/>
       <a onClick={()=>{
-        setList([...list,{id:list.reduce((pre,current)=>Math.max(current.id,pre),0)+1,title:item,completed:false}])}}><i className="fa fa-plus"></i></a>
+        setList([...list,{id:list.reduce((pre,current)=>Math.max(current.id,pre),0)+1,title:item,completed:false}])}}><FontAwesomeIcon icon='plus' /></a>
     </div>)
 }
 
@@ -39,7 +40,7 @@ function Item({id,title,completed,list,setList}){
         <span>{title}</span>
       </label>
       <a href="#" onClick={()=>removeItem({id})}>
-        <i className="fa fa-times"></i>
+      <FontAwesomeIcon icon='times' />
       </a>
     </li>)
 }

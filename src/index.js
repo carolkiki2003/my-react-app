@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './assets/index.css';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faTimes, faPlus} from '@fortawesome/free-solid-svg-icons'
+import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+library.add(faTimes,faPlus)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
