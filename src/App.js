@@ -10,6 +10,7 @@ function InputBox({list,setList}){
   function submitInputItem(){
     if(item.trim()!==''){
       setList([...list,{id:list.reduce((pre,current)=>Math.max(current.id,pre),0)+1,title:item,completed:false}])
+      setItem('')
     }else{
       window.alert('代辦事項不能為空白')
     }
@@ -59,7 +60,7 @@ function ItemList({renderList,list,setList,beCompletedNum,tab}){
     }
     return(
         <div className="todoList_items">
-        {beCompletedNum===0 && (tab==='all' || tab==='beCompleted')?<div className="info">
+        {beCompletedNum===0 && tab==='beCompleted'?<div className="info">
           目前尚無代辦事項
         </div>:<ul className="todoList_item">
           { renderList.map((item,idx)=>{ return <Item key={item.id} id={item.id} list={list} title={item.title} completed={item.completed} setList={setList}/> })}
