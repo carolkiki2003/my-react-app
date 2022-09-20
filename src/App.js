@@ -17,7 +17,7 @@ function InputBox({list,setList}){
   return (
     <div className="inputBox">
       <input type="text" value={item} onChange={(e)=>{setItem(e.target.value)}} placeholder="請輸入待辦事項"/>
-      <a href="#"><i class="fa fa-plus" onClick={()=>submitInputItem()}></i></a>
+      <a onClick={()=>submitInputItem()}><FontAwesomeIcon icon='plus' /></a>
     </div>)
 }
 
