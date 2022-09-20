@@ -7,11 +7,17 @@ const {useState}=React
 // InputBox
 function InputBox({list,setList}){
   const [item,setItem]=useState("")
+  function submitInputItem(){
+    if(item.trim()!==''){
+      setList([...list,{id:list.reduce((pre,current)=>Math.max(current.id,pre),0)+1,title:item,completed:false}])
+    }else{
+      window.alert('代辦事項不能為空白')
+    }
+  }
   return (
     <div className="inputBox">
       <input type="text" value={item} onChange={(e)=>{setItem(e.target.value)}} placeholder="請輸入待辦事項"/>
-      <a onClick={()=>{
-        setList([...list,{id:list.reduce((pre,current)=>Math.max(current.id,pre),0)+1,title:item,completed:false}])}}><FontAwesomeIcon icon='plus' /></a>
+      <a href="#"><i class="fa fa-plus" onClick={()=>submitInputItem()}></i></a>
     </div>)
 }
 
